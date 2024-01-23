@@ -16,5 +16,5 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    pomo::timer(args.work_time, args.break_time, pomo::State::Work);
+    pomo::timer(args.work_time, args.break_time);
 }

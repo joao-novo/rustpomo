@@ -1,19 +1,20 @@
 use clap::Parser;
+use rustpomo::pomo;
 
-/// Simple CLI Pomodoro Timer
 #[derive(Parser, Debug)]
-#[command(author, version, about, long_about = None)]
+#[clap(author = "João Novo", version, about)]
+/// Simple CLI Pomodoro Timer
 struct Args {
     /// Work period duration (in minutes)
     #[arg(short, long, default_value_t = 25)]
-    work: u32,
+    work_time: u64,
 
     /// Break period duration (in minutes)
     #[arg(short, long, default_value_t = 5)]
-    r#break: u32,
+    break_time: u64,
 }
 
 fn main() {
     let args = Args::parse();
-    println!("{:?}", args);
+    pomo::timer(args.work_time, args.break_time, pomo::State::Work);
 }

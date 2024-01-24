@@ -7,4 +7,7 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.4.18", features = ["derive"] }
+countdown = "0.1.2"
 figlet-rs = "0.1.5"
+indicatif = "0.17.7"
+soloud = "1.0.5"
